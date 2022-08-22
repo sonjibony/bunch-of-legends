@@ -50,16 +50,16 @@ input{
 </style>
 
   </head>
-  <body class="container-fluid">
+  <body class="">
     
     <header class="bg-info text-center mt-2 mb-4">
         <div class="row" style="height:90vh ;">
-            <div class="col-12 col-lg-6">
+            <div class="col-5 col-lg-6">
                 <div class=" d-flex justify-content-center align-items-center h-100">
                 <img src="transparent-football-player-football-player-png-transparent-images-clipart-ve5e421b1564baf0.9610288515813906134126.png" alt="">
                 </div>
                 </div>
-            <div class="col-12 col-lg-6">
+            <div class="col-7 col-lg-6">
                 <div class="  d-flex flex-column justify-content-center align-items-center px-5" style="height:100%;">
         <h1 class="fw-bold">Here you will find a <br>  <span class="fw-bolder" style="color:#e9611d ;font-family: 'Kanit', sans-serif; font-size:55px ;
 
@@ -77,15 +77,17 @@ input{
     <!--cards-->
 <section class="row container-fluid">
     
-    <div class="col-md-8 col-6 mb-3">
+    <div class="col-md-8 col-12 mb-3">
         
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-2 row-cols-md-3 g-4">
         <div class="col">
           <div class="card" style="height: 350px ; width: 250px;">
             <img src="pic1.jpg" class="card-img-top img-fluid" alt="..." style="width:auto;">
             <div class="card-body text-center">
               <h5 class="card-title mb-3">Lionel Messi</h5>
-              <button class=" btn-color"> Select</button>
+              
+              <button class=" btn-color btn-disabled" onclick="addToCart(this)"> Select</button>
+              
             </div>
           </div>
           </div>
@@ -94,8 +96,10 @@ input{
             <img src="pic2.jpg" class="card-img-top img-fluid" alt="..." style="width:auto;">
             <div class="card-body text-center">
               <h5 class="card-title mb-3">Cristiano Ronaldo</h5>
-              <button class=" btn-color"> Select</button>
-            </div>
+            
+        <button class=" btn-color btn-disabled"onclick="addToCart(this)" > Select</button>
+
+           </div> 
           </div>
           </div>
         <div class="col">
@@ -103,7 +107,7 @@ input{
             <img src="pic4.jpg" class="card-img-top img-fluid" alt="..." style="width:auto;">
             <div class="card-body text-center">
               <h5 class="card-title mb-3">Mohammed Salah</h5>
-              <button class=" btn-color"> Select</button>
+              <button class=" btn-color btn-disabled"onclick="addToCart(this)" > Select</button>
             </div>
           </div>
           </div>
@@ -112,16 +116,16 @@ input{
             <img src="pic6.jpg" class="card-img-top img-fluid" alt="..." style="width:auto;">
             <div class="card-body text-center">
               <h5 class="card-title mb-3">Karim Benzema</h5>
-              <button class=" btn-color"> Select</button>
+              <button class=" btn-color btn-disabled" onclick="addToCart(this)"> Select</button>
             </div>
-          </div>
+          </div> 
           </div>
         <div class="col">
           <div class="card" style="height: 350px ; width: 250px;">
             <img src="pic3.jpg" class="card-img-top img-fluid" alt="..." style="width:auto;">
             <div class="card-body text-center">
               <h5 class="card-title mb-3">Robert Lewandowski</h5>
-              <button class=" btn-color"> Select</button>
+              <button class=" btn-color btn-disabled" onclick="addToCart(this)"> Select</button>
             </div>
           </div>
           </div>
@@ -130,7 +134,7 @@ input{
             <img src="pic5.jpg" class="card-img-top img-fluid" alt="..." style="width:auto;">
             <div class="card-body text-center">
               <h5 class="card-title mb-3">Wayne Rooney</h5>
-              <button class=" btn-color"> Select</button>
+              <button class=" btn-color btn-disabled" onclick="addToCart(this)"> Select</button>
             </div>
           </div>
           </div>
@@ -142,20 +146,18 @@ input{
        </div> 
           
         
-    <div class="col-lg-4 col-6">
+    <div class="col-lg-4 col-12">
         <div class="container overflow-hidden text-center">
             <div class="row gy-5">
               <div class="col-12">
                 
                 <div class="p-3 border" style="height: 350px ; background-color: #0b486bce;">
-                    <h3>Select Your Victory</h3>
-                <ol>
-                    <li class="fs-5"></li>
-                    <li class="fs-5">abcdfddfddffdff</li>
-                    <li class="fs-5">abcdfddfddffdff</li>
-                    <li class="fs-5">abcdfddfddffdff</li>
-                    <li class="fs-5">abcdfddfddffdff</li>
-                </ol>
+                    <h3>Selected- <span id="selected">0</span></h3>
+
+                <div id="selected-players">
+
+
+                </div>
                 
                 
                 </div>
@@ -169,15 +171,15 @@ input{
                      
                     <h3>Budget</h3>
                     <label for="" style="width: 100px ; font-weight: 600;;">Per Player </label>
-                    <input  type="number" name="" id="">
-                    <button class="btn-calc my-3">Calculate</button>
-                    <h5>player Expenses  $<span>5000</span></h5>
+                    <input  type="number" name="" id="budget-field">
+                    <button class=" btn-calc my-3" id="btn-calculate">Calculate</button>
+                    <h5>player Expenses  $<span id="expenses-field">00</span></h5>
                     <label  for="" style="width:100px ; font-weight: 600;">Manager</label>
-                    <input class="my-3" type="number" name="" id="">
+                    <input class="my-3 " type="number" name="" id="manager-field"> <br>
                     <label for="" style="width:100px ; font-weight: 600;" >Coach</label>
-                    <input type="number" name="" id="">
-                    <button class="btn-calc my-4">Calculate Total</button>
-                    <h5>Total  $<span>5000</span></h5>
+                    <input type="number" name="" id="coach-field">
+                    <button class="btn-calc my-4" id="btn-calculate-total">Calculate Total</button>
+                    <h5>Total  $<span id="total-field">00</span></h5>
                 
                 
               </div>
@@ -198,5 +200,7 @@ input{
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="selection.js"></script>
+    <script src="calculation.js"></script>
   </body>
 </html>
