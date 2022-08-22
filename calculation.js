@@ -2,16 +2,15 @@
 function for bonus
 --------------------*/
 function elementValue(elementId) {
-
   const element = document.getElementById(elementId);
-    //error handling
-if(Math.sign(element.value)===-1){
-    alert('Please provide valid input');
-    element.value= '';
+  //error handling
+  if (Math.sign(element.value) === -1) {
+    alert("Please provide valid input");
+    element.value = "";
     return;
   }
   const elementValue = parseFloat(element.value);
-  
+
   return elementValue;
 }
 
@@ -23,9 +22,9 @@ document.getElementById("btn-calculate").addEventListener("click", function () {
   const selectedTotal = selectedTotalElement.innerText;
   const budgetFieldElement = document.getElementById("budget-field");
   //error handling
-  if(Math.sign(budgetFieldElement.value)===-1){
-    alert('Please provide valid input');
-    budgetFieldElement.value ='';
+  if (Math.sign(budgetFieldElement.value) === -1) {
+    alert("Please provide valid input");
+    budgetFieldElement.value = "";
     return;
   }
 
@@ -46,13 +45,11 @@ document
     // using bonus function
     const coachCost = elementValue("coach-field");
     const managerCost = elementValue("manager-field");
-    
+
     // total cost calculation
-    
+
     const totalFieldElement = document.getElementById("total-field");
 
-    
-    
     totalFieldElement.innerText =
       parseFloat(expensesField) + managerCost + coachCost;
     console.log(totalFieldElement.innerText);
